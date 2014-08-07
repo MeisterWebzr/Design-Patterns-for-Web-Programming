@@ -4,7 +4,7 @@ superhero = raw_input("Enter your Superhero's name:  ")
 
 #raw impu for superhero age
 age = raw_input("Enter your Superhero's age:")
-sex = raw_input("Is your Superhero male or female?")
+sex = raw_input("Is your Superhero male or female?  ")
 '''
 if sex = str(male):
     pass
@@ -14,20 +14,27 @@ else:
     print "please enter either male or female"
 '''
 
-power = raw_input("Enter your Superhero's power:")
-how = raw_input("How did your Superhero get those powers? This can be something like, getting hit by lighting or"
-                "falling in a bio hazardous river. Be creative!")
-time = raw_input("How long did it take for your SuperHero to master his powers?")
+power = raw_input("Enter your Superhero's power:  ")
+how = raw_input("How did your Superhero get those powers? This can be something like, getting hit by lightning or"
+                "falling in a bio hazardous river. Be creative!  ")
+time = raw_input("How long did it take for your SuperHero to master his powers?  ")
 flaw = raw_input("All Superhero's have flaws, so what flaw does your Superhero have. This can be the power itself or "
-                 "something simple like rabbits paralyze his legs or blind him for 10 seconds.")
+                 "something simple like rabbits paralyze his legs or blind him for 10 seconds.  ")
 
 personality = raw_input("What type of personality does your super hero have? ie; Bully, shy, pompous or witty and "
-                        "energetic.")
-outfits = raw_input("How many villians does your Superhero have?")
+                        "energetic.  ")
+outfits = raw_input("How many villians does your Superhero have?  ")
 
-print superhero +" is " +" "+ power + " " + sex + " that has" + outfits + " cover ups" + personality + " "+ "consealing" \
-                                                                                                   " and has a deadly flaw of"\
-      + flaw + " which derived from" + how + "."
+def calcArea(h, w):
+        area = h * w
+        return area
+a = calcArea(210, 240);
+#print "My speed  is " + str(a) + " mph"
+
+
+print superhero + " is " + age + " with "+  sex + " " + power + " that has " + outfits + " x's " + personality + " superpower. "+ " consealing" \
+                                                                                                   " and has a deadly flaw that "\
+      + flaw + " which derived from " + how + ". But, flying through at " + str(a) + " mph is fast almost the fastest."
 
 '''
 #conditional statement determining superhero's power
