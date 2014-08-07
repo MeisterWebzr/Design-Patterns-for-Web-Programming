@@ -4,7 +4,9 @@
 superhero = raw_input("Enter your Superhero's name:  ")
 #raw impu for superhero age
 age = raw_input("Enter your Superhero's age: ")
+#asking sex of super hero
 sex = raw_input("Is your Superhero male or female?  ")
+#raw input for superhero power
 power = raw_input("What's your Superhero power?  ")
 how = raw_input("How did your Superhero get those powers? This can be something like, getting hit by lightning or"
                 "falling in a bio hazardous river. Be creative!  ")
