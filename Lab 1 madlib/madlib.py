@@ -45,4 +45,4 @@ halloffame = ["Superman 2010", "Wonder Woman 2011","Batman 2012", "Meister Webzr
 for r in halloffame:#setting r to cycle through the super hero array
     print "W3C Hall of Fame winner " + r #prinitng the results of array and string
     pass#passing to lower line
-print "thank you for creating a super hero with Madlib. Type clear and hit ENTER"#printing thank you for playing game
+print "Thanks for using Madlib. Type clear and hit ENTER"#printing thank you for playing game
