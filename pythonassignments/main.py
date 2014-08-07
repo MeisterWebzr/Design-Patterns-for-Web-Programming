@@ -113,7 +113,7 @@ message = '''
             <title>{title}</title>
         </head>
         <body>
-            {body}
+            <h1>{body}</h1
         </body>
     </html>
 '''
