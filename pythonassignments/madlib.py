@@ -8,9 +8,12 @@ age = raw_input("Enter your Superhero's age: ")
 sex = raw_input("Is your Superhero male or female?  ")
 #raw input for superhero power
 power = raw_input("What's your Superhero power?  ")
+#asking for how the super hero got the super powers
 how = raw_input("How did your Superhero get those powers? This can be something like, getting hit by lightning or"
                 "falling in a bio hazardous river. Be creative!  ")
+#asking for how long the super hero took to learn or master the super powers
 time = raw_input("How long did it take for your SuperHero to master his powers?  ")
+#raw input for flaw question
 flaw = raw_input("All Superhero's have flaws, so what flaw does your Superhero have. This can be the power itself or "
                  "something simple like rabbits paralyze his legs or blind him for 10 seconds.  ")
 
