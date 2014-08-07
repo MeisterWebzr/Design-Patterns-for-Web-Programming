@@ -82,7 +82,7 @@ for i in range(0,10):
     i = i+1
 
 '''
-'''
+
 #"FOR EACH" LOOP-----------------
 #great for objects and arrays----
 
@@ -91,6 +91,9 @@ for r in designers:
    #print r
     #print "One of the best designers is"
     pass
+
+
+'''
 
 #FUNCTIONS-----------------------
 

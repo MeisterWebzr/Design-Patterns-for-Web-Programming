@@ -16,6 +16,7 @@ class MainHandler(webapp2.RequestHandler): #declaring a class
         pass
         #code goes here
 
+
 #never touch the below information
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
