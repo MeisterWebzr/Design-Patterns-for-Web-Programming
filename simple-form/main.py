@@ -19,11 +19,10 @@ class MainHandler(webapp2.RequestHandler):
 
         page_body = '''
             <div id="ad"><h1>Summer orders get 25% off</h1></div>
-            <fieldset>Summer orders get 25% off</fieldset>
             <form>
             <div class="row"><label>First name:</label><input type="text" name="firstname" required></div>
             <div class="row"><label>Last name:</label><input type="text" name="lastname" required></div>
-            <div class="row"><label>Email main:</label><input type="text" name="email" required></div>
+            <div class="row"><label>Email:</label><input type="text" name="email" required></div>
             <div class="row"><label>Contact#:</label><input type="tel" name="tel" required></div>
             <div class="row">
                 <label>Project Type:</label>
@@ -44,7 +43,7 @@ class MainHandler(webapp2.RequestHandler):
             </div>
             <div class="row" id="terms">
 
-                <input type="checkbox" name"Terms" value="Terms" required>agree to be contacted by Meister.
+                <input  id="checkbox" type="checkbox" name"Terms" value="Terms" required>agree to be contacted by Meister.
 
             </div>
 

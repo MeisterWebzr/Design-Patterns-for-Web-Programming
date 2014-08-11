@@ -16,7 +16,6 @@ body{
 	margin-left: 200px;
 	width: 996px;
 	height: 600px;
-	background: orange;
 
 }
 
@@ -93,7 +92,8 @@ input{
 
 select{
 	float: right;
-	width: 160px;
+	width: 200px;
+	
 }
 
 
@@ -102,5 +102,14 @@ select{
 
 	border: 2px solid black;
 	width: 100%;
-	clear: both;
+	display: inline-block;
+	float: right;
+}
+#checkbox{
+
+	position: static;
+	top: 45px;
+	left: 100px;
+	padding: 20px;
+	float: left;
 }
