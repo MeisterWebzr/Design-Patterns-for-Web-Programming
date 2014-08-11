@@ -15,13 +15,20 @@ class MainHandler(webapp2.RequestHandler):
         <link rel="stylesheet" href="css/main.css">
         <title>Web work Request</title>
     </head>
-    <body>
-        <form>
+    <body>'''
+
+        page_body = '''
+            <form>
+
+        '''
+
+
+        page_close = '''
         </form>
     </body>
-</html>
+</html>'''
 
-        
+
 
 
 
