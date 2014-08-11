@@ -21,10 +21,10 @@ class MainHandler(webapp2.RequestHandler):
             <div id="ad"><h1>Summer orders get 25% off</h1></div>
             <fieldset>Summer orders get 25% off</fieldset>
             <form>
-            <div class="row"><label>First name:</label><input type="text" name="firstname"></div>
-            <div class="row"><label>Last name:</label><input type="text" name="lastname"></div>
-            <div class="row"><label>Email main:</label><input type="text" name="email"></div>
-            <div class="row"><label>Best Contact#:</label><input type="tel" name="tel"></div>
+            <div class="row"><label>First name:</label><input type="text" name="firstname" required></div>
+            <div class="row"><label>Last name:</label><input type="text" name="lastname" required></div>
+            <div class="row"><label>Email main:</label><input type="text" name="email" required></div>
+            <div class="row"><label>Best Contact#:</label><input type="tel" name="tel" required></div>
             <div class="row">
                 <label>Project Type:</label>
                     <select name="project" required>
@@ -43,7 +43,7 @@ class MainHandler(webapp2.RequestHandler):
             </div>
             <div class="row">
 
-                <input type="checkbox" name"Terms" value="Terms">You agree to the above information being valid ans true.
+                <input type="checkbox" name"Terms" value="Terms" required>You agree to the above information being valid ans true.
 
             </div>
 
@@ -59,6 +59,12 @@ class MainHandler(webapp2.RequestHandler):
         </form>
     </body>
 </html>'''
+
+
+        if self.request.GET:
+            firstname = self.request.GET['firstname']
+            lastname = self.request.GET['lastname']
+            email = self.request.GET['emai']
 
 
 
