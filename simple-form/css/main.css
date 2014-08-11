@@ -59,6 +59,7 @@ input{
 	float: right;
 	position: relative;
 	top: -30px;
+	font-size: 16pt;
 }
 
 .row{
@@ -88,4 +89,18 @@ input{
 	height: 200px;
 	font-style: 'Impact';
 	font-size: 18pt;
+}
+
+select{
+	float: right;
+	width: 160px;
+}
+
+
+
+#terms{
+
+	border: 2px solid black;
+	width: 100%;
+	clear: both;
 }

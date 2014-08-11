@@ -24,9 +24,10 @@ class MainHandler(webapp2.RequestHandler):
             <div class="row"><label>First name:</label><input type="text" name="firstname" required></div>
             <div class="row"><label>Last name:</label><input type="text" name="lastname" required></div>
             <div class="row"><label>Email main:</label><input type="text" name="email" required></div>
-            <div class="row"><label>Best Contact#:</label><input type="tel" name="tel" required></div>
+            <div class="row"><label>Contact#:</label><input type="tel" name="tel" required></div>
             <div class="row">
                 <label>Project Type:</label>
+
                     <select name="project" required>
                         <option value="Graphic Design">Graphic Design</option>
                         <option value="Web Design">Web Design</option>
@@ -41,9 +42,9 @@ class MainHandler(webapp2.RequestHandler):
                         <option value="Ecommerce Setup">Ecommerce Setup</option>
                     </select>
             </div>
-            <div class="row">
+            <div class="row" id="terms">
 
-                <input type="checkbox" name"Terms" value="Terms" required>You agree to be contact by Meister.
+                <input type="checkbox" name"Terms" value="Terms" required>agree to be contacted by Meister.
 
             </div>
 
