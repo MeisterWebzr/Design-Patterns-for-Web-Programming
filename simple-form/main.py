@@ -43,7 +43,7 @@ class MainHandler(webapp2.RequestHandler):
             </div>
             <div class="row">
 
-                <input type="checkbox" name"Terms" value="Terms" required>You agree to the above information being valid ans true.
+                <input type="checkbox" name"Terms" value="Terms" required>You agree to be contact by Meister.
 
             </div>
 
@@ -64,11 +64,12 @@ class MainHandler(webapp2.RequestHandler):
         if self.request.GET:
             firstname = self.request.GET['firstname']
             lastname = self.request.GET['lastname']
-            email = self.request.GET['emai']
+            email = self.request.GET['email']
+            tel = self.request.GET['tel']
             self.response.write(page_head + "Name: " +firstname + " " + lastname + "  " + " Email: " + email + " " + "Phone#: " + tel + " " +
             "Project type: " + page_close)
 
-        else: 
+        else:
             self.response.write(page_head + page_body + page_close)
 
 
