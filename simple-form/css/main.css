@@ -4,3 +4,17 @@
 *DPWP Online
 *Simple Form
 */
+
+
+html{
+	margin: 0 auto;
+}
+
+body{
+
+	margin-top: 100px;
+	margin-left: 200px;
+	width: 996px;
+	height: 600px;
+
+}
