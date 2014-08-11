@@ -32,3 +32,11 @@ body{
 		font-weight: bold;
 
 }
+
+form{
+
+	margin: 0 auto;
+	width: 420px;
+	height: 330px;
+	padding: 10px;
+}
