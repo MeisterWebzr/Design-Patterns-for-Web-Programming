@@ -65,7 +65,8 @@ class MainHandler(webapp2.RequestHandler):
             firstname = self.request.GET['firstname']
             lastname = self.request.GET['lastname']
             email = self.request.GET['emai']
-
+            self.response.write(page_head + "Name: " +firstname + " " + lastname + "  " + " Email: " + email + " " + "Phone#: " + tel + " " +
+           
 
 
 
