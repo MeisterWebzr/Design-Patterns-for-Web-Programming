@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../../../week1/classes-getter-setter/.idea/classes-getter-setter.iml" filepath="$PROJECT_DIR$/../../../week1/classes-getter-setter/.idea/classes-getter-setter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/encapsulated-calculator.iml" filepath="$PROJECT_DIR$/.idea/encapsulated-calculator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../week 2/calculator slides/getters-setters/.idea/getters-setters.iml" filepath="$PROJECT_DIR$/../../../week 2/calculator slides/getters-setters/.idea/getters-setters.iml" />
+    </modules>
+  </component>
+</project>
+
