@@ -49,16 +49,18 @@ label{
 	font-size: 20pt;
 	font-family: 'Helvetica Neue';
 	float: left;
+	text-align: right;
+	position: relative;
+	left: -35px;
 }
 
 input{
 	margin: 0 auto;
-	padding: 10px;
-	width: 210px;
+	width: 170px;
 	float: right;
-	position: relative;
-	top: -30px;
 	font-size: 16pt;
+	position: relative;
+	left: -45px;
 }
 
 .row{
@@ -71,7 +73,7 @@ input{
 
 #sub{
 
-	width: 100%;
+	width: 50%;
 	height: 190px;
 	margin: 0 auto;
 	margin-top: 25px;
@@ -92,7 +94,10 @@ input{
 
 select{
 	float: right;
-	width: 200px;
+	width: 140px;
+	position: relative;
+	left: -45px;
+	top: 5px;
 	
 }
 
@@ -100,16 +105,16 @@ select{
 
 #terms{
 
-	border: 2px solid black;
-	width: 100%;
-	display: inline-block;
+	width: 70%;
 	float: right;
+	text-align: center;
+	position: relative;
+	left: -45px;
 }
 #checkbox{
 
-	position: static;
-	top: 45px;
-	left: 100px;
-	padding: 20px;
-	float: left;
+	
+	float: right;
+	position: relative;
+	left: 20px;
 }

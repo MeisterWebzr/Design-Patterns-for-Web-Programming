@@ -43,7 +43,7 @@ class MainHandler(webapp2.RequestHandler):
             </div>
             <div class="row" id="terms">
 
-                <input  id="checkbox" type="checkbox" name"Terms" value="Terms" required>agree to be contacted by Meister.
+                <input  id="checkbox" type="checkbox" name"Terms" value="Terms" required>Agree to terms.
 
             </div>
 
@@ -68,8 +68,8 @@ class MainHandler(webapp2.RequestHandler):
             tel = self.request.GET['tel']
             project = self.request.GET['project']
 
-            self.response.write(page_head + "Name: " +firstname + " " + lastname + "  " + " Email: " + email + " " + "Phone#: " + tel + " " +
-            "Project type: "+ project + page_close)
+            self.response.write(page_head + "Name: " +firstname + " " + lastname + "  " + "<br />Email: " + email + " " + " <br />Phone#: " + tel + " " +
+            " <br />Project type: "+ project + page_close)
 
         else:
             self.response.write(page_head + page_body + page_close)
