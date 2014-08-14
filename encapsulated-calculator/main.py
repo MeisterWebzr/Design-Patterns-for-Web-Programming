@@ -31,7 +31,14 @@ class MainHandler(webapp2.RequestHandler):
         p3.team = "Orlando Magic" #team attribute for player one
         p3.position = "Power Forward" #position attribute for player one
 
-        
+        #PLAYER FOUR
+        p4 = Player() #data object for player one
+        p4.name = "Andrew Arellano" #name attribute for player one
+        p4.age = 28  #age attribute for player one
+        p4.team = "Miami Heat" #team attribute for player one
+        p4.position = "Center" #position attribute for player one
+
+
 
 
         #self.response.write("Welcome to the NBA Ball Stats<br />") #testing write to browser
