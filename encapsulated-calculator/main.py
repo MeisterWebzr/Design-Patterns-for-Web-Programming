@@ -65,10 +65,10 @@ class Player(object):#template for data object for players
         self.position = "" #storing public information player position
         self.p1.avg = 0 #storing average points per game player 1
         self.p2.avg = 0 #storing average points per game player 2
-        self.p3.avg= 0 #storing average points per game player 3
-        self.p4.avg= 0 #storing average points per game player 4
-        self.p5.avg= 0 #storing average points per game player 5
-
+        self.p3.avg = 0 #storing average points per game player 3
+        self.p4.avg = 0 #storing average points per game player 4
+        self.p5.avg = 0 #storing average points per game player 5
+        self.__team_avg = 0 #storing team average points as private
 c
 
 
