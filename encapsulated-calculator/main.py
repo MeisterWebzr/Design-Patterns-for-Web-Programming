@@ -8,14 +8,27 @@ import webapp2
 class MainHandler(webapp2.RequestHandler):
     def get(self):
 
-        player1 = Player() #dataobject for player one
-        player1.name = "Brent Burroughs" #name attribute for player one
-        player1.age = "21" #age attribute for player one
-        player1.team = "Chicago Bulls" #team attribute for player one
-        player1.position = "PG" #position attribute for player one
+        #PLAYER ONE
+        p1 = Player() #data object for player one
+        p1.name = "Brent Burroughs" #name attribute for player one
+        p1.age = 23 #age attribute for player one
+        p1.team = "Chicago Bulls" #team attribute for player one
+        p1.position = "Power Forward" #position attribute for player one
+        p1.avg = ""
+
+        #PLAYER TWO
+        p2 = Player() #data object for player one
+        p2.name = "Raymond Jordan" #name attribute for player one
+        p2.age = 21  #age attribute for player one
+        p2.team = "Los Angelas Lakers" #team attribute for player one
+        p2.position = "Point Guard" #position attribute for player one
 
 
+        
 
+
+        #self.response.write("Welcome to the NBA Ball Stats<br />") #testing write to browser
+        #elf.response.write("Player 1: " + player1.name)
 
 
 
@@ -27,7 +40,17 @@ class Player(object):#template for data object for players
         self.position = "" #storing public information
         self.ppg = "" #storing public information
 
-        self.response.write('Hello world!')
+
+class GameStats(object):#template game points calculation
+    def __init__(self):#constructor function
+        self.stat1 =  0
+        self.stat2 =  0
+        self.stat3 =  0
+        self.stat4 =  0
+        self.stat5 =  0
+        self.__points_per_game = 0 #setting private ppg attribute
+
+
 
 
 
