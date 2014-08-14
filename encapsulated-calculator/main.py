@@ -38,6 +38,13 @@ class MainHandler(webapp2.RequestHandler):
         p4.team = "Miami Heat" #team attribute for player one
         p4.position = "Center" #position attribute for player one
 
+        #PLAYER FIVE
+        p5 = Player() #data object for player one
+        p5.name = "Andrew Arellano" #name attribute for player one
+        p5.age = 28  #age attribute for player one
+        p5.team = "Miami Heat" #team attribute for player one
+        p5.position = "Center" #position attribute for player one
+
 
 
 
