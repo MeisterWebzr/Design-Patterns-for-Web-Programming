@@ -14,15 +14,15 @@ class MainHandler(webapp2.RequestHandler):
         p1.age = 23 #age attribute for player one
         p1.team = "Chicago Bulls" #team attribute for player one
         p1.position = "Power Forward" #position attribute for player one
-        p1.avg = ""
+        p1.avg = 18
 
         #PLAYER TWO
         p2 = Player() #data object for player one
         p2.name = "Raymond Jordan" #name attribute for player one
         p2.age = 21  #age attribute for player one
-        p2.team = "Los Angelas Lakers" #team attribute for player one
+        p2.team = "LA Lakers" #team attribute for player one
         p2.position = "Point Guard" #position attribute for player one
-
+        p2.avg = 18
 
         #PLAYER THREE
         p3 = Player() #data object for player one
@@ -30,6 +30,8 @@ class MainHandler(webapp2.RequestHandler):
         p3.age = 19  #age attribute for player one
         p3.team = "Orlando Magic" #team attribute for player one
         p3.position = "Power Forward" #position attribute for player one
+        p3.avg = 18
+
 
         #PLAYER FOUR
         p4 = Player() #data object for player one
@@ -37,14 +39,16 @@ class MainHandler(webapp2.RequestHandler):
         p4.age = 28  #age attribute for player one
         p4.team = "Miami Heat" #team attribute for player one
         p4.position = "Center" #position attribute for player one
+        p4.avg = 18
+
 
         #PLAYER FIVE
         p5 = Player() #data object for player one
-        p5.name = "Andrew Arellano" #name attribute for player one
-        p5.age = 28  #age attribute for player one
-        p5.team = "Miami Heat" #team attribute for player one
-        p5.position = "Center" #position attribute for player one
-
+        p5.name = "Mike Zerpeda" #name attribute for player one
+        p5.age = 20  #age attribute for player one
+        p5.team = "Boston Celtics" #team attribute for player one
+        p5.position = "Power Forward" #position attribute for player one
+        p5.avg = 18
 
 
 
