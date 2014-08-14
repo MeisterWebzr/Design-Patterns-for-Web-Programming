@@ -11,25 +11,6 @@ class MainHandler(webapp2.RequestHandler):
         p = Page()
         self.response.write(p.print_out())
 
-class Page(object):
-    def __init__(self):
-        self.title = "Welcome!"
-        self.css = "css/main.css"
-        self.head = """
-<!DOCTYPE HTML>
-<html>
-    <head>
-        <title>{self.title}</title>
-        <link href="{self.css}" rel="stylesheet" type="text/css" />
-    </head>
-    <body>
-
-        """
-        self.body = "Welcome to Meister's OOP Python page!"
-        self.close = """
-    </body>
-</html>
-        """
 
         #PLAYER ONE
         p1 = Player() #data object for player one
@@ -98,6 +79,30 @@ class Page(object):
         #self.response.write("Welcome to the NBA Ball Stats<br />") #testing write to browser
         #elf.response.write("Player 1: " + player1.name)
 
+class Page(object):
+    def __init__(self):
+        self.title = "Welcome!"
+        self.css = "css/main.css"
+        self.head = """
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>{self.title}</title>
+        <link href="{self.css}" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+
+        """
+        self.body = "Welcome to Meister's OOP Python page!"
+        self.close = """
+    </body>
+</html>
+        """
+
+    def print_out(self):
+        all = self.head + self.body + self.close
+        all = all.format(**locals())
+        return all
 
 
 class Player(object):#template for data object for players
