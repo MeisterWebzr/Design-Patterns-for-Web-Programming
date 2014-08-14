@@ -22,7 +22,8 @@ class MainHandler(webapp2.RequestHandler):
         p1.game3 = 9 #storing average points per game 3
         p1.game4 = 20 #storing average points per game 4
         p1.game5 = 21 #storing average points per game 5
-        self.response.write("Avg PPG: " + str(p1.player_avg))
+        #self.response.write("Player 1: " + p1.name + "<br /> "+ "Avg PPG: " + str(p1.player_avg))
+
 
         #PLAYER TWO
         p2 = Player() #data object for player one
@@ -65,7 +66,7 @@ class MainHandler(webapp2.RequestHandler):
         #PLAYER FIVE
         p5 = Player() #data object for player one
         p5.name = "Mike Zepeda" #name attribute for player one
-        p5.age = 20  #age attri bute for player one
+        p5.age = 20  #age attribute for player one
         p5.team = "Boston Celtics" #team attribute for player one
         p5.position = "Power Forward" #position attribute for player one
         p5.avg = 15 #avergage points per game
@@ -75,8 +76,10 @@ class MainHandler(webapp2.RequestHandler):
         p5.game4 = 20 #storing average points per game 4
         p5.game5 = 21 #storing average points per game 5
 
-        #self.response.write("Welcome to the NBA Ball Stats<br />") #testing write to browser
-        #elf.response.write("Player 1: " + player1.name)
+
+
+       #self.response.write("Welcome to the NBA Ball Stats<br />") #testing write to browser
+       #self.response.write("Player 1: " + player1.name)
 
 class Page(object):
     def __init__(self):
@@ -91,8 +94,15 @@ class Page(object):
     </head>
     <body>
 
+        <h1>Welcome to the Starting Five!</h1>
+        <button><a>Player1</a></button><br>
+        <button><a>Player2</a></button><br>
+        <button><a>Player3</a></button><br>
+        <button><a>Player4</a></button><br>
+        <button><a>Player5</a></button>
+
         """
-        self.body = "Welcome to Meister's OOP Python page!"
+        self.body = ""
         self.close = """
     </body>
 </html>
