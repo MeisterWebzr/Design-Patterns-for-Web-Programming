@@ -7,6 +7,29 @@ import webapp2
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
+        
+        p = Page()
+        self.response.write(p.print_out())
+
+class Page(object):
+    def __init__(self):
+        self.title = "Welcome!"
+        self.css = "css/main.css"
+        self.head = """
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>{self.title}</title>
+        <link href="{self.css}" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+
+        """
+        self.body = "Welcome to Meister's OOP Python page!"
+        self.close = """
+    </body>
+</html>
+        """
 
         #PLAYER ONE
         p1 = Player() #data object for player one
@@ -14,13 +37,12 @@ class MainHandler(webapp2.RequestHandler):
         p1.age = 23 #age attribute for player one
         p1.team = "Chicago Bulls" #team attribute for player one
         p1.position = "Power Forward" #position attribute for player one
-        p1.game1 = 15 #storing average points per game player 1
-        p1.game2 = 20 #storing average points per game player 2
-        p1.game3 = 9 #storing average points per game player 3
-        p1.game4 = 22 #storing average points per game player 4
-        p1.game5 = 11 #storing average points per game player 5
-
-        print p1.player_avg
+        p1.game1 = 15 #storing average points per game 1
+        p1.game2 = 20 #storing average points per game 2
+        p1.game3 = 9 #storing average points per game 3
+        p1.game4 = 20 #storing average points per game 4
+        p1.game5 = 21 #storing average points per game 5
+        self.response.write("Avg PPG: " + str(p1.player_avg))
 
         #PLAYER TWO
         p2 = Player() #data object for player one
@@ -28,7 +50,11 @@ class MainHandler(webapp2.RequestHandler):
         p2.age = 21  #age attribute for player one
         p2.team = "LA Lakers" #team attribute for player one
         p2.position = "Point Guard" #position attribute for player one
-        p2.avg = 35
+        p2.game1 = 15 #storing average points per game 1
+        p2.game2 = 20 #storing average points per game 2
+        p2.game3 = 9 #storing average points per game 3
+        p2.game4 = 20 #storing average points per game 4
+        p2.game5 = 21 #storing average points per game 5
 
         #PLAYER THREE
         p3 = Player() #data object for player one
@@ -36,7 +62,11 @@ class MainHandler(webapp2.RequestHandler):
         p3.age = 19  #age attribute for player one
         p3.team = "Orlando Magic" #team attribute for player one
         p3.position = "Power Forward" #position attribute for player one
-        p3.avg = 12 #avergage points per game
+        p3.game1 = 15 #storing average points per game 1
+        p3.game2 = 20 #storing average points per game 2
+        p3.game3 = 9 #storing average points per game 3
+        p3.game4 = 20 #storing average points per game 4
+        p3.game5 = 21 #storing average points per game 5
 
 
         #PLAYER FOUR
@@ -45,7 +75,11 @@ class MainHandler(webapp2.RequestHandler):
         p4.age = 28  #age attribute for player one
         p4.team = "Miami Heat" #team attribute for player one
         p4.position = "Center" #position attribute for player one
-        p4.avg = 20 #avergage points per game
+        p4.game1 = 15 #storing average points per game 1
+        p4.game2 = 20 #storing average points per game 2
+        p4.game3 = 9 #storing average points per game 3
+        p4.game4 = 20 #storing average points per game 4
+        p4.game5 = 21 #storing average points per game 5
 
 
         #PLAYER FIVE
@@ -55,6 +89,11 @@ class MainHandler(webapp2.RequestHandler):
         p5.team = "Boston Celtics" #team attribute for player one
         p5.position = "Power Forward" #position attribute for player one
         p5.avg = 15 #avergage points per game
+        p5.game1 = 15 #storing average points per game 1
+        p5.game2 = 20 #storing average points per game 2
+        p5.game3 = 9 #storing average points per game 3
+        p5.game4 = 20 #storing average points per game 4
+        p5.game5 = 21 #storing average points per game 5
 
         #self.response.write("Welcome to the NBA Ball Stats<br />") #testing write to browser
         #elf.response.write("Player 1: " + player1.name)
