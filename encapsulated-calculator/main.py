@@ -50,7 +50,7 @@ class MainHandler(webapp2.RequestHandler):
         p5.position = "Power Forward" #position attribute for player one
         p5.avg = 15 #avergage points per game
 
-
+        print p5.team_avg
 
         #self.response.write("Welcome to the NBA Ball Stats<br />") #testing write to browser
         #elf.response.write("Player 1: " + player1.name)
@@ -63,18 +63,17 @@ class Player(object):#template for data object for players
         self.age = "" #storing public information player age
         self.team = "" #storing public information player team name
         self.position = "" #storing public information player position
-        self.p1.avg = 0 #storing average points per game player 1
-        self.p2.avg = 0 #storing average points per game player 2
-        self.p3.avg = 0 #storing average points per game player 3
-        self.p4.avg = 0 #storing average points per game player 4
-        self.p5.avg = 0 #storing average points per game player 5
+        self.game1 = 0 #storing average points per game player 1
+        self.game2 = 0 #storing average points per game player 2
+        self.game3 = 0 #storing average points per game player 3
+        self.game4 = 0 #storing average points per game player 4
+        self.game5 = 0 #storing average points per game player 5
         self.__team_avg = 0 #storing team average points as private
-c
 
-
-    @property #adding decerating function the getter of team average points per game
+    @property
     def team_avg(self):
         return self.__team_avg
+
 
 
 
