@@ -35,10 +35,10 @@ class MainHandler(webapp2.RequestHandler):
                         <option value="Network / Hosting">Network / Hosting</option>
                         <option value="Mobile App Design">Mobile App Design</option>
                         <option value="Monthly Web Maintenance">Monthly Web Maintenance</option>
-                        <option value="Wireframes / Mockups">Wireframes / Mockups</option>
+                        <option value="Wire frames / Mockups">Wire frames / Mockups</option>
                         <option value="Company Branding">Company Branding</option>
                         <option value="Hosting">Hosting</option>
-                        <option value="Ecommerce Setup">Ecommerce Setup</option>
+                        <option value="E-commerce Setup">E-commerce Setup</option>
                     </select>
             </div>
             <div class="row" id="terms">
@@ -67,6 +67,7 @@ class MainHandler(webapp2.RequestHandler):
             email = self.request.GET['email']
             tel = self.request.GET['tel']
             project = self.request.GET['project']
+
 
             self.response.write(page_head + "Name: " +firstname + " " + lastname + "  " + "<br />Email: " + email + " " + " <br />Phone#: " + tel + " " +
             " <br />Project type: "+ project + page_close)
