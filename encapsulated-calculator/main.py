@@ -24,6 +24,8 @@ class MainHandler(webapp2.RequestHandler):
         p1.game3 = 9 #storing average points per game 3
         p1.game4 = 20 #storing average points per game 4
         p1.game5 = 21 #storing average points per game 5
+        p1.player_avg = 40
+
 
         self.response.write("Player 1: " + p1.name + "<br /> "+ "Avg PPG: " + str(p1.player_avg))
 
@@ -40,7 +42,7 @@ class MainHandler(webapp2.RequestHandler):
         p2.game3 = 9 #storing average points per game 3
         p2.game4 = 20 #storing average points per game 4
         p2.game5 = 21 #storing average points per game 5
-
+        p2.calc_ppg() #calling the calc_ppg function
 
 
         #PLAYER THREE
@@ -54,7 +56,7 @@ class MainHandler(webapp2.RequestHandler):
         p3.game3 = 9 #storing average points per game 3
         p3.game4 = 20 #storing average points per game 4
         p3.game5 = 21 #storing average points per game 5
-
+        p3.calc_ppg() #calling the calc_ppg function
 
         #PLAYER FOUR
         p4 = Player() #data object for player one
@@ -67,7 +69,7 @@ class MainHandler(webapp2.RequestHandler):
         p4.game3 = 9 #storing average points per game 3
         p4.game4 = 20 #storing average points per game 4
         p4.game5 = 21 #storing average points per game 5
-
+        p4.calc_ppg() #calling the calc_ppg function
 
         #PLAYER FIVE
         p5 = Player() #data object for player one
@@ -81,7 +83,7 @@ class MainHandler(webapp2.RequestHandler):
         p5.game3 = 9 #storing average points per game 3
         p5.game4 = 20 #storing average points per game 4
         p5.game5 = 21 #storing average points per game 5
-
+        p5.calc_ppg() #calling the calc_ppg function
 
 
        #self.response.write("Welcome to the NBA Ball Stats<br />") #testing write to browser
@@ -140,6 +142,11 @@ class Player(object):#template for data object for players
         self.game4 = 0 #storing average points per game player 4
         self.game5 = 0 #storing average points per game player 5
         self.__player_avg = 0 #storing team average points as private
+
+
+
+
+
 
     @property
     def player_avg(self):
