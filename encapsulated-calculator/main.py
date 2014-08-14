@@ -11,7 +11,6 @@ class MainHandler(webapp2.RequestHandler):
         p = Page()
         self.response.write(p.print_out())
 
-
         #PLAYER ONE
         p1 = Player() #data object for player one
         p1.name = "Brent Burroughs" #name attribute for player one
