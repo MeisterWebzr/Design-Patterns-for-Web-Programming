@@ -72,7 +72,9 @@ class Player(object):#template for data object for players
 
     @property
     def team_avg(self):
+        #calculate the team average
         return self.__team_avg
+
 
 
 
