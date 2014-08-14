@@ -1,4 +1,11 @@
+html{
+	width: 100%;
+	background: #000;
+}
 body{
 
-	background: grey;
+	margin: 0 auto;
+	width: 450px;
+	height: 200px;
+	color: red;
 }

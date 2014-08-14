@@ -11,6 +11,8 @@ class MainHandler(webapp2.RequestHandler):
         p = Page()
         self.response.write(p.print_out())
 
+
+
         #PLAYER ONE
         p1 = Player() #data object for player one
         p1.name = "Brent Burroughs" #name attribute for player one
@@ -22,7 +24,11 @@ class MainHandler(webapp2.RequestHandler):
         p1.game3 = 9 #storing average points per game 3
         p1.game4 = 20 #storing average points per game 4
         p1.game5 = 21 #storing average points per game 5
-        #self.response.write("Player 1: " + p1.name + "<br /> "+ "Avg PPG: " + str(p1.player_avg))
+
+    if  name = Brent:
+        brent = p1
+        self.response.write("Player 1: " + p1.name + "<br /> "+ "Avg PPG: " + str(p1.player_avg))
+
 
 
         #PLAYER TWO
@@ -93,17 +99,16 @@ class Page(object):
         <link href="{self.css}" rel="stylesheet" type="text/css" />
     </head>
     <body>
-
-        <h1>Welcome to the Starting Five!</h1>
-        <button><a>Player1</a></button><br>
-        <button><a>Player2</a></button><br>
-        <button><a>Player3</a></button><br>
-        <button><a>Player4</a></button><br>
-        <button><a>Player5</a></button>
-
         """
         self.body = ""
         self.close = """
+
+        <h1>Welcome to the Starting Five!</h1>
+        <button><a href="?fname=Brent&age=23">Brent Burroughs</a></button><br>
+        <button><a>Player2</a>Raymond Jordan</button><br>
+        <button><a>Player3</a>Kyle Lewis</button><br>
+        <button><a>Player4</a>Andrew Arellano</button><br>
+        <button><a>Player5</a>Mike Zepeda</button>
     </body>
 </html>
         """
@@ -132,6 +137,7 @@ class Player(object):#template for data object for players
         #calculate the team average
         self.__player_avg = (self.game1 + self.game2 + self.game3 + self.game4 + self.game5)/5
         return self.__player_avg
+
 
 
 
