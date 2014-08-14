@@ -44,6 +44,8 @@ class MainHandler(webapp2.RequestHandler):
         p2.game5 = 21 #storing average points per game 5
         p2.calc_ppg() #calling the calc_ppg function
 
+        self.response.write("Player 2: " + p2.name + "<br /> "+ "Avg PPG: " + str(p2.player_avg))
+
 
         #PLAYER THREE
         p3 = Player() #data object for player one
@@ -91,7 +93,7 @@ class MainHandler(webapp2.RequestHandler):
 
 class Page(object):
     def __init__(self):
-        self.title = "Welcome!"
+        self.title = "Starting 5 Stats!"
         self.css = "css/main.css"
         self.head = """
 <!DOCTYPE HTML>
@@ -100,22 +102,12 @@ class Page(object):
         <title>{self.title}</title>
         <link href="{self.css}" rel="stylesheet" type="text/css" />
     </head>
-    <header></header>
+    <header><h1>Welcome to the Starting Five!</h1></header>
     <body>
         """
         self.body = ""
         self.close = """
 
-
-        <div id="bbox">
-             <h1>Welcome to the Starting Five!</h1>
-            <button><a href="?name=Brent Burroughs">Brent Burroughs</a></button><br>
-            <button><a href"?name=Raymond Jordan">Raymond Jordan</a></button><br>
-            <button><a href"?name=Kyle Lewis">Kyle Lewis</a></button><br>
-            <button><a href"?name=Andrew Allan">Andrew Allan</a></button><br>
-            <button><a href"?name=Mike Zapata">Mike Zapata</a></button>
-        </div>
-        <div
     </body>
 </html>
         """
@@ -124,10 +116,6 @@ class Page(object):
         all = self.head + self.body + self.close
         all = all.format(**locals())
         return all
-
-
-
-
 
 
 class Player(object):#template for data object for players
@@ -145,18 +133,24 @@ class Player(object):#template for data object for players
 
 
 
-
-
-
     @property
     def player_avg(self):
-        #calculate the team average
-        self.__player_avg = (self.game1 + self.game2 + self.game3 + self.game4 + self.game5)/5
+        #calculatintg player avg pts per game
         return self.__player_avg
 
 
+    @player_avg.setter
+    def player_avg(self, new_player_avg):
+        #changing new points per game for player one
+        self.__player_avg = new_player_avg
 
+    def calc_ppg(self):#new calc for new attributes avg point per game
+        self.__player_avg = (self.game1 + self.game2 + self.game3 + self.game4 + self.game5)/5
 
+class Show_info(object):#template to show list info of players
+    def Show_info(self):
+         if self.request.GET[self.name]:
+            print self.head + "Account Holder: "+ self.name + "  " +  self.age + "  Email: " + self.team +  self.close
 
 
 #never touch the information below
