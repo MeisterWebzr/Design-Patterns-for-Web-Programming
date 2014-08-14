@@ -24,6 +24,13 @@ class MainHandler(webapp2.RequestHandler):
         p2.position = "Point Guard" #position attribute for player one
 
 
+        #PLAYER THREE
+        p3 = Player() #data object for player one
+        p3.name = "Kyle Lewis" #name attribute for player one
+        p3.age = 19  #age attribute for player one
+        p3.team = "Orlando Magic" #team attribute for player one
+        p3.position = "Power Forward" #position attribute for player one
+
         
 
 
