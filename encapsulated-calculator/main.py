@@ -14,7 +14,7 @@ class MainHandler(webapp2.RequestHandler):
         p1.age = 23 #age attribute for player one
         p1.team = "Chicago Bulls" #team attribute for player one
         p1.position = "Power Forward" #position attribute for player one
-        p1.avg = 18
+        p1.avg = 28
 
         #PLAYER TWO
         p2 = Player() #data object for player one
@@ -22,7 +22,7 @@ class MainHandler(webapp2.RequestHandler):
         p2.age = 21  #age attribute for player one
         p2.team = "LA Lakers" #team attribute for player one
         p2.position = "Point Guard" #position attribute for player one
-        p2.avg = 18
+        p2.avg = 35
 
         #PLAYER THREE
         p3 = Player() #data object for player one
@@ -30,7 +30,7 @@ class MainHandler(webapp2.RequestHandler):
         p3.age = 19  #age attribute for player one
         p3.team = "Orlando Magic" #team attribute for player one
         p3.position = "Power Forward" #position attribute for player one
-        p3.avg = 18
+        p3.avg = 12 #avergage points per game
 
 
         #PLAYER FOUR
@@ -39,16 +39,16 @@ class MainHandler(webapp2.RequestHandler):
         p4.age = 28  #age attribute for player one
         p4.team = "Miami Heat" #team attribute for player one
         p4.position = "Center" #position attribute for player one
-        p4.avg = 18
+        p4.avg = 20 #avergage points per game
 
 
         #PLAYER FIVE
         p5 = Player() #data object for player one
-        p5.name = "Mike Zerpeda" #name attribute for player one
-        p5.age = 20  #age attribute for player one
+        p5.name = "Mike Zepeda" #name attribute for player one
+        p5.age = 20  #age attri bute for player one
         p5.team = "Boston Celtics" #team attribute for player one
         p5.position = "Power Forward" #position attribute for player one
-        p5.avg = 18
+        p5.avg = 15 #avergage points per game
 
 
 
@@ -59,26 +59,22 @@ class MainHandler(webapp2.RequestHandler):
 
 class Player(object):#template for data object for players
     def __init__(self):#constructor function
-        self.name = ""   #storing public information
-        self.age = "" #storing public information
-        self.team = "" #storing public information
-        self.position = "" #storing public information
-        self.ppg = "" #storing public information
+        self.name = ""   #storing public information player name
+        self.age = "" #storing public information player age
+        self.team = "" #storing public information player team name
+        self.position = "" #storing public information player position
+        self.p1.avg = 0 #storing average points per game player 1
+        self.p2.avg = 0 #storing average points per game player 2
+        self.p3.avg= 0 #storing average points per game player 3
+        self.p4.avg= 0 #storing average points per game player 4
+        self.p5.avg= 0 #storing average points per game player 5
+
+c
 
 
-class GameStats(object):#template game points calculation
-    def __init__(self):#constructor function
-        self.stat1 =  0
-        self.stat2 =  0
-        self.stat3 =  0
-        self.stat4 =  0
-        self.stat5 =  0
-        self.__points_per_game = 0 #setting private ppg attribute
-
-
-
-
-
+    @property #adding decerating function the getter of team average points per game
+    def team_avg(self):
+        return self.__team_avg
 
 
 
