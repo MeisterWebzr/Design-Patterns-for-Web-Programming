@@ -1,0 +1,16 @@
+if name == Brent:
+            print "Player name: " + p1.name
+            print "Avg PPG: " + str(p1.player_avg)
+            print "Position: " + p1.position
+            print "Team: " + p1.team
+        else:
+         print tefst
+
+ lastname = self.request.GET['lastname']
+            email = self.request.GET['email']
+            tel = self.request.GET['tel']
+            project = self.request.GET['project']
+
+
+            self.response.write(page_head + "Name: " +firstname + " " + lastname + "  " + "<br />Email: " + email + " " + " <br />Phone#: " + tel + " " +
+            " <br />Project type: "+ project + page_close)
