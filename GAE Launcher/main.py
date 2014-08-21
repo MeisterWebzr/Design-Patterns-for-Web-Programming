@@ -8,14 +8,60 @@ import urllib2#here we import all the classes and code needed to request info, r
 from xml.etree.ElementTree import QName #from xml.etree dir we setup communication
 import xml.etree.ElementTree as ET #import library classes and syntax and setting naming of ET in application
 
-
-
-
-#never touch info below
 class MainHandler(webapp2.RequestHandler):
     def get(self):
         self.response.write('Hello world!')
 
+
+
+#this will serve as our abstract class with no instances
+class Page(object):
+    def __init__(self):#constructor function to call functions below
+        self.title = "News 4 U!"
+        self.css = "css/main.css"
+        self.head = '''
+<!DOCTYPE HTML>
+<html>
+    <head><title></title></head>
+    <body>'''
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#never touch info below
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
 ], debug=True)
