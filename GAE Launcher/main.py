@@ -8,23 +8,30 @@ import urllib2#here we import all the classes and code needed to request info, r
 from xml.etree.ElementTree import QName #from xml.etree dir we setup communication
 import xml.etree.ElementTree as ET #import library classes and syntax and setting naming of ET in application
 
-
-
-
-
-
-
-
-
-
-
-
-
 class MainHandler(webapp2.RequestHandler):
     def get(self):
         p = SearchArea()
         p.inputs = [['search','search','enter search term'],['Submit', 'submit',]]
         self.response.write(p.print_out())
+
+        #if input is entered and searched
+        if self.request.GET:
+            #setting search input to GET function
+            search = self.request.GET['search']
+            #setting url for api
+            url = "http://news.yahoo.com/rss/?p=" +search
+            #assembling request
+            request = urllib2.Request(url)
+            #creating object with urllib2
+            opener = urllib2.build_opener()
+            #getting result from url- request from api
+            result = opener.open(request)
+
+                
+
+
+
+
 
 #this will serve as our abstract class with no instances
 class Page(object):
