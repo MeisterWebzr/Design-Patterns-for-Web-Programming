@@ -10,7 +10,9 @@ import xml.etree.ElementTree as ET #import library classes and syntax and settin
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-        self.response.write('Hello world!')
+        p = SearchArea()
+        p.inputs = [ ['city', 'text', 'city'], ['topic','text', 'topic'], ['search', 'submit']  ]
+        self.response.write(p.print_out())
 
 
 
@@ -22,21 +24,21 @@ class Page(object):
         #setting stylesheet directory
         self.css = "css/main.css"
         #head section of html setup
-        self.head = '''
+        self._head = '''
 <!DOCTYPE HTML>
 <html>
     <head><title></title></head>
     <body>'''
         #body section where all content will go
-        self.body = 'Search top news'
+        self._body = 'Search top news'
         #closing function to wrap end tag of html to print page to browser
-        self.close = '''
+        self._close = '''
     </body>
 </html>'''
 
 
     def print_out(self):#funtion to print out above page
-        return  self.head + self.body + self.close# calling and printing all above functions to print html page
+        return  self._head + self._body + self._close# calling and printing all above functions to print html page
 
 #constructing super class for search area inputs
 class SearchArea(Page):
@@ -58,7 +60,7 @@ class SearchArea(Page):
         self.__inputs = arr #setting private input = array of inputs
         #seting up cycle through array inputs
         for item in arr:
-            self._form_inputs += '<input type="'+item1+'" name=" ' +item[0]
+            self._form_inputs += '<input type="'+item[1]+'" name=" ' +item[0]
             #setting number of arrays depedning on what inputs i create at top of file
             try: #try this
                 self._form_inputs += '" placeholder="' +item[2]+'"/>'
@@ -67,40 +69,10 @@ class SearchArea(Page):
         print self._form_inputs
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    #POLYMORPHISM!!!!!!!! ----------------- METHOD OVERRIDING
+    def print_out(self):
+        #returning the Page printout here using polymorphism to override
+        return self._head + self._body + self._form_open + self._form_inputs + self._form_close + self._close
 
 
 
