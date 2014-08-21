@@ -38,6 +38,15 @@ class Page(object):
     def print_out(self):#funtion to print out above page
         return  self.head + self.body + self.close# calling and printing all above functions to print html page
 
+#constructing super class for search area inputs
+class SearchArea(Page):
+    def __init__(self):#constructot function for SearchArea class
+        #constructing super class
+        super(SearchArea, self).__init__()#calling super class into function
+        self._form_open = '<form method="GET">'
+        self._form_close = '</form>'
+        self.__inputs = []
+        self._form_inputs= ''
 
 
 
