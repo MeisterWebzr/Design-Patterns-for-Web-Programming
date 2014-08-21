@@ -43,10 +43,31 @@ class SearchArea(Page):
     def __init__(self):#constructot function for SearchArea class
         #constructing super class
         super(SearchArea, self).__init__()#calling super class into function
-        self._form_open = '<form method="GET">'
-        self._form_close = '</form>'
-        self.__inputs = []
-        self._form_inputs= ''
+        self._form_open = '<form method="GET">' #form open with method GET
+        self._form_close = '</form>' #form close
+        self.__inputs = [] #setup inputs array index
+        self._form_inputs= '' #setup form string inputs section
+
+    @property #setting propetty of inputs that ill create above
+    def inputs(self):
+        pass#passing
+
+    @inputs.setter# here ill set the parameters for inputs to go above
+    def inputs(self, arr): #setting up array for inputs
+        #chaninging private input variable
+        self.__inputs = arr #setting private input = array of inputs
+        #seting up cycle through array inputs
+        for item in arr:
+            self._form_inputs += '<input type="'+item1+'" name=" ' +item[0]
+            #setting number of arrays depedning on what inputs i create at top of file
+            try: #try this
+                self._form_inputs += '" placeholder="' +item[2]+'"/>'
+            except:# otherwise
+                self._form_inputs += '"/>'
+        print self._form_inputs
+
+
+
 
 
 
