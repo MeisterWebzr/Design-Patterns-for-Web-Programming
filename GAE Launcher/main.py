@@ -8,13 +8,23 @@ import urllib2#here we import all the classes and code needed to request info, r
 from xml.etree.ElementTree import QName #from xml.etree dir we setup communication
 import xml.etree.ElementTree as ET #import library classes and syntax and setting naming of ET in application
 
+
+
+
+
+
+
+
+
+
+
+
+
 class MainHandler(webapp2.RequestHandler):
     def get(self):
         p = SearchArea()
-        p.inputs = [ ['city', 'text', 'city'], ['topic','text', 'topic'], ['search', 'submit']  ]
+        p.inputs = [['search','search','enter search term'],['Submit', 'submit',]]
         self.response.write(p.print_out())
-
-
 
 #this will serve as our abstract class with no instances
 class Page(object):
@@ -50,7 +60,7 @@ class SearchArea(Page):
         self.__inputs = [] #setup inputs array index
         self._form_inputs= '' #setup form string inputs section
 
-    @property #setting propetty of inputs that ill create above
+    @property #setting property of inputs that ill create above
     def inputs(self):
         pass#passing
 
@@ -60,19 +70,21 @@ class SearchArea(Page):
         self.__inputs = arr #setting private input = array of inputs
         #seting up cycle through array inputs
         for item in arr:
-            self._form_inputs += '<input type="'+item[1]+'" name=" ' +item[0]
+            self._form_inputs += '<input type="'+item[1]+'"name="' +item[0]
             #setting number of arrays depedning on what inputs i create at top of file
             try: #try this
-                self._form_inputs += '" placeholder="' +item[2]+'"/>'
+                self._form_inputs += '"placeholder="'+item[2]+'"/>'
             except:# otherwise
                 self._form_inputs += '"/>'
         print self._form_inputs
+
 
 
     #POLYMORPHISM!!!!!!!! ----------------- METHOD OVERRIDING
     def print_out(self):
         #returning the Page printout here using polymorphism to override
         return self._head + self._body + self._form_open + self._form_inputs + self._form_close + self._close
+
 
 
 
