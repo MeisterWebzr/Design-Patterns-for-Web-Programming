@@ -8,16 +8,15 @@ from xml.dom import minidom
 class MainHandler(webapp2.RequestHandler):
     def get(self):
        p = FormPage()
-       p.inputs = [ ['zip', 'text', 'zip code'], ['Submit', 'submit']]
+       p.inputs = [['zip','text', 'zip code'],['Submit', 'submit']]
        self.response.write(p.print_out())
 
 
        if self.request.GET:
 
            zip = self.request.GET['zip']
-           url = "http://xml.weather.yahoo.com/forecastrss?p=" + zip
            #get info from API
-           url = "http://xml.weather.yahoo.com/forecastrss?p=90210"
+           url = "http://xml.weather.yahoo.com/forecastrss?p=" + zip
            #====1st====> assemble the request <=======
            request = urllib2.Request(url)
            #====2nd====> use the urllib2 to create and object to get the url <=======
@@ -84,10 +83,10 @@ class FormPage(Page):
         self.__inputs = arr
         #sort through the array to create html inputs
         for item in arr:
-           self._form_inputs += '<input type="' + item[1] + '" name=" ' + item[0]
+           self._form_inputs += '<input type="'+item[1]+ '"name="' +item[0]
            #if there is a third item.... add it in...
            try:
-                self._form_inputs += '" placeholder=" '+ item[2]+'"/>'
+                self._form_inputs += '"placeholder=" '+item[2]+'"/>'
            #otherwise end tag
            except:
                 self._form_inputs += '" />'

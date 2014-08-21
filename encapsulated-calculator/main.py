@@ -90,6 +90,7 @@ class MainHandler(webapp2.RequestHandler):
        #self.response.write("Player 1: " + player1.name)
 
 
+
 class Page(object):
     def __init__(self):
         self.title = "Starting 5 Stats!"
@@ -105,11 +106,11 @@ class Page(object):
             <body>
             <div id="bbox">
                 <div id="block"></div><div id="midad"><h1>Starting 5 Line up</h1></div><div id="block"></div>
-                <button><a href="?name=Brent Burroughs">Brent Burroughs</a></button>
-                <button><a href="?name=Raymon Jordan">Raymon Jordan</a></button>
-                <button><a href="?name=Kyle Lewis">Kyle Lewis</a></button>
-                <button><a href="?name=Andrew Allen">Andrew Allen</a></button>
-                <button><a href="?name=Mike Zepeda">Mike Zepeda</a></button>
+                <a href="?name=Brent Burroughs">Brent Burroughs</a>
+                <a href="?name=Raymon Jordan">Raymon Jordan</a>
+                <a href="?name=Kyle Lewis">Kyle Lewis</a>
+                <a href="?name=Andrew Allen">Andrew Allen</a>
+                <a href="?name=Mike Zepeda">Mike Zepeda</a>
             </div>
         """
         self.body = " "
@@ -123,6 +124,7 @@ class Page(object):
         all = all.format(**locals())
         return all
 
+  
 
 
 
