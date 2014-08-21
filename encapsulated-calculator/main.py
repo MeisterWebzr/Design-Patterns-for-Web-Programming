@@ -24,10 +24,8 @@ class MainHandler(webapp2.RequestHandler):
         p1.game5 = 21 #storing average points per game 5
         p1.player_avg = 40
 
-        print "Player name: " + p1.name
-        print "Avg PPG: " + str(p1.player_avg)
-        print "Position: " + p1.position
-        print "Ppg: "
+        print "Player 1: " + p1.name +" Age: "+ str(p1.age) +" Team: "+p1.team +" Position: " + p1.position + " PPG(avg): " + str(p1.player_avg)
+
 
         #PLAYER TWO
         p2 = Player() #data object for player one
@@ -35,14 +33,15 @@ class MainHandler(webapp2.RequestHandler):
         p2.age = 21  #age attribute for player one
         p2.team = "LA Lakers" #team attribute for player one
         p2.position = "Point Guard" #position attribute for player one
-        p2.game1 = 15 #storing average points per game 1
-        p2.game2 = 20 #storing average points per game 2
+        p2.game1 = 7 #storing average points per game 1
+        p2.game2 = 30 #storing average points per game 2
         p2.game3 = 9 #storing average points per game 3
         p2.game4 = 20 #storing average points per game 4
         p2.game5 = 21 #storing average points per game 5
         p2.calc_ppg() #calling the calc_ppg function
 
-        print "Player 2: " + p2.name + "<br /> "+ "Avg PPG: " + str(p2.player_avg)
+        #concatenated the player printout
+        print "Player 2: " + p2.name +" Age: "+ str(p2.age) +" Team: "+p2.team +" Position: " + p2.position + " PPG(avg): " + str(p2.player_avg)
 
 
         #PLAYER THREE
@@ -52,11 +51,14 @@ class MainHandler(webapp2.RequestHandler):
         p3.team = "Orlando Magic" #team attribute for player one
         p3.position = "Power Forward" #position attribute for player one
         p3.game1 = 15 #storing average points per game 1
-        p3.game2 = 20 #storing average points per game 2
+        p3.game2 = 10 #storing average points per game 2
         p3.game3 = 9 #storing average points per game 3
         p3.game4 = 20 #storing average points per game 4
-        p3.game5 = 21 #storing average points per game 5
+        p3.game5 = 9 #storing average points per game 5
         p3.calc_ppg() #calling the calc_ppg function
+
+        #concatenated the player printout
+        print "Player 3: " + p3.name +" Age: "+ str(p3.age) +" Team: "+p3.team +" Position: " + p3.position + " PPG(avg): " + str(p3.player_avg)
 
         #PLAYER FOUR
         p4 = Player() #data object for player one
@@ -66,10 +68,13 @@ class MainHandler(webapp2.RequestHandler):
         p4.position = "Center" #position attribute for player one
         p4.game1 = 15 #storing average points per game 1
         p4.game2 = 20 #storing average points per game 2
-        p4.game3 = 9 #storing average points per game 3
+        p4.game3 = 3 #storing average points per game 3
         p4.game4 = 20 #storing average points per game 4
         p4.game5 = 21 #storing average points per game 5
         p4.calc_ppg() #calling the calc_ppg function
+
+        #concatenated the player printout
+        print "Player 4: " + p4.name +" Age: "+ str(p4.age) +" Team: "+p4.team +" Position: " + p4.position + " PPG(avg): " + str(p4.player_avg)
 
         #PLAYER FIVE
         p5 = Player() #data object for player one
@@ -81,20 +86,24 @@ class MainHandler(webapp2.RequestHandler):
         p5.game1 = 15 #storing average points per game 1
         p5.game2 = 20 #storing average points per game 2
         p5.game3 = 9 #storing average points per game 3
-        p5.game4 = 20 #storing average points per game 4
-        p5.game5 = 21 #storing average points per game 5
+        p5.game4 = 11 #storing average points per game 4
+        p5.game5 = 0 #storing average points per game 5
         p5.calc_ppg() #calling the calc_ppg function
 
+        #concatenated the player printout
+        print "Player 5: " + p5.name +" Age: "+ str(p5.age) +" Team: "+p5.team +" Position: " + p5.position + " PPG(avg): " + str(p5.player_avg)
 
-       #self.response.write("Welcome to the NBA Ball Stats<br />") #testing write to browser
+
+       #self.response.write("Welcome to the NBA Ball Stats") #testing write to browser
        #self.response.write("Player 1: " + player1.name)
 
 
 
 class Page(object):
-    def __init__(self):
-        self.title = "Starting 5 Stats!"
-        self.css = "css/main.css"
+    def __init__(self):#initlizing the function of itself to begin
+        self.title = "Starting 5 Stats!" #setting title of application
+        self.css = "css/main.css" #setting css dir of application
+        #setting head to begin structure of html for application
         self.head = """
         <!DOCTYPE HTML>
         <html>
@@ -107,7 +116,7 @@ class Page(object):
             <div id="bbox">
                 <div id="block"></div><div id="midad"><h1>Starting 5 Line up</h1></div><div id="block"></div>
                 <a href="?name=Brent Burroughs">Brent Burroughs</a>
-                <a href="?name=Raymon Jordan">Raymon Jordan</a>
+                <a href="?name=Raymond Jordan">Raymond Jordan</a>
                 <a href="?name=Kyle Lewis">Kyle Lewis</a>
                 <a href="?name=Andrew Allen">Andrew Allen</a>
                 <a href="?name=Mike Zepeda">Mike Zepeda</a>
@@ -119,12 +128,12 @@ class Page(object):
         </html>
         """
 
-    def print_out(self):
-        all = self.head + self.body + self.close
-        all = all.format(**locals())
-        return all
+    def print_out(self):#function for printing out the page sections
+        all = self.head + self.body + self.close#printing out page all with head, body & close elements
+        all = all.format(**locals())#printing locals for attaching and updating with locals **
+        return all#return all to send all above info to browser
 
-  
+
 
 
 

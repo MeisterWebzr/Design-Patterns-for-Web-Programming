@@ -9,7 +9,7 @@ body{
 	margin: 0 auto;
 	padding: 10px;
 	width: 100%;
-	color: red;
+	color: white;
 
 }
 header{
@@ -64,10 +64,11 @@ a{
 	left: 10px;
 	font-size: 17pt;
 	font-family: 'arial';
-	text-shadow: 2px 2px 2px black;
+	text-shadow: 1px 1px 1px silver;
+	font-style: bold;
 }
 
 a:hover{
-	color: green;
+	color: black;
 }
 
