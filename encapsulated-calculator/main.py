@@ -153,19 +153,19 @@ class Player(object):#template for data object for players
 
 
 
-    @property
+    @property#setting property for player avg
     def player_avg(self):
         #calculatintg player avg pts per game
         return self.__player_avg
 
 
-    @player_avg.setter
+    @player_avg.setter #setter for player avg getter
     def player_avg(self, new_player_avg):
         #changing new points per game for player one
         self.__player_avg = new_player_avg
 
     def calc_ppg(self):#new calc for new attributes avg point per game
-        self.__player_avg = (self.game1 + self.game2 + self.game3 + self.game4 + self.game5)/5
+        self.__player_avg = (self.game1 + self.game2 + self.game3 + self.game4 + self.game5)/5#the calculation for adding all scores then dividing by the number of games in array
 
 
 
