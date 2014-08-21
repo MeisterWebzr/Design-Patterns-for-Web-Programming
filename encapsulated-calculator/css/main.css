@@ -59,16 +59,17 @@ a{
 	
 	padding: 8px;
 	text-decoration: none;
-	color: red;
+	color: black;
 	position: relative;
 	left: 10px;
-	font-size: 17pt;
-	font-family: 'arial';
+	font-size: 19pt;
+	font-family: "impact";
 	text-shadow: 1px 1px 1px silver;
 	font-style: bold;
 }
 
 a:hover{
-	color: black;
+	color: red;
+	text-shadow: 1px 1px 1px black;
 }
 
