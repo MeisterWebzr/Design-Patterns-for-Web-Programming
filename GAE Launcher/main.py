@@ -24,10 +24,13 @@ class Page(object):
 <html>
     <head><title></title></head>
     <body>'''
+        self.body = 'Search top news'
+        self.close = '''
+    </body>
+</html>'''
 
 
-
-
+    
 
 
 
