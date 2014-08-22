@@ -31,10 +31,6 @@ class MainHandler(webapp2.RequestHandler):
             self.response.write(xmldoc.getElementsByTagName('title')[1].firstChild.nodeValue)
 
 
-
-
-
-
 #this will serve as our abstract class with no instances
 class Page(object):
     def __init__(self):#constructor function to call functions below
