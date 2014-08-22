@@ -1,7 +1,8 @@
 
 html{
 	
-	background: url(bkg.png);
+	background: url(bkg2.jpg) center no-repeat;
+	width: 100%
 
 
 }
@@ -10,7 +11,7 @@ header{
 }
 
 body{
-	border: 1px dotted silver;
+	
 	width: 800px;
 	height: 500px;
 	margin: 0 auto;
