@@ -108,7 +108,7 @@ class Page(object):
         <!DOCTYPE HTML>
         <html>
             <head>
-                <title>{self.title}</title>
+                <title>Starting 5</title>
                 <link href="{self.css}" rel="stylesheet" type="text/css" />
             </head>
             <header></header>
@@ -165,7 +165,7 @@ class Player(object):#template for data object for players
         self.__player_avg = new_player_avg
 
     def calc_ppg(self):#new calc for new attributes avg point per game
-        self.__player_avg = (self.game1 + self.game2 + self.game3 + self.game4 + self.game5)/5#the calculation for adding all scores then dividing by the number of games in array
+        self.__player_avg = (self.game1 + self.game2 + self.game3 + self.game4 + self.game5)/5#the calculation for adding all scres then dividing by the number of games in array
 
 
 

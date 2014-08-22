@@ -6,7 +6,8 @@ Assignment: GEA Launcher
 import webapp2
 import urllib2#here we import all the classes and code needed to request info, receive that info and open info
 from xml.etree.ElementTree import QName #from xml.etree dir we setup communication
-import xml.etree.ElementTree as ET #import library classes and syntax and setting naming of ET in application
+#import xml.etree.ElementTree as ET #import library classes and syntax and setting naming of ET in application
+import json
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
@@ -15,19 +16,18 @@ class MainHandler(webapp2.RequestHandler):
         self.response.write(p.print_out())
 
         #if input is entered and searched
-        if self.request.GET:
-            #setting search input to GET function
-            search = self.request.GET['search']
+        #search = self.request.GET['search']
             #setting url for api
-            url = "http://news.yahoo.com/rss/?p=" +search
+            #url = "http://news.yahoo.com/rss/?p=" +search
             #assembling request
-            request = urllib2.Request(url)
+            #request = urllib2.Request(url)
             #creating object with urllib2
-            opener = urllib2.build_opener()
+            #opener = urllib2.build_opener()
             #getting result from url- request from api
-            result = opener.open(request)
+            #result = opener.open(request)
 
-                
+            #parsing with eTree
+
 
 
 
@@ -37,17 +37,18 @@ class MainHandler(webapp2.RequestHandler):
 class Page(object):
     def __init__(self):#constructor function to call functions below
         #setting title of application
-        self.title = "News 4 U!"
-        #setting stylesheet directory
-        self.css = "css/main.css"
-        #head section of html setup
-        self._head = '''
+        self.title="News 4 U!"
+        self.css="css/self.css" #setting stylesheet directory
+        self._head='''
 <!DOCTYPE HTML>
 <html>
-    <head><title></title></head>
+    <head>
+    <title>Get the news!</title>
+    <link href="{self.css}" rel="stylesheet" type="text/css" />
+    </head>
     <body>'''
         #body section where all content will go
-        self._body = 'Search top news'
+        self._body = ''
         #closing function to wrap end tag of html to print page to browser
         self._close = '''
     </body>
@@ -83,14 +84,14 @@ class SearchArea(Page):
                 self._form_inputs += '"placeholder="'+item[2]+'"/>'
             except:# otherwise
                 self._form_inputs += '"/>'
-        print self._form_inputs
+        #print self._form_inputs
 
 
 
     #POLYMORPHISM!!!!!!!! ----------------- METHOD OVERRIDING
     def print_out(self):
         #returning the Page printout here using polymorphism to override
-        return self._head + self._body + self._form_open + self._form_inputs + self._form_close + self._close
+        return  self._head + self._body + self._form_open + self._form_inputs + self._form_close + self._close
 
 
 
