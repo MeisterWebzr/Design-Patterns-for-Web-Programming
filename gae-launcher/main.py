@@ -5,28 +5,30 @@ Assignment: GEA Launcher
 '''
 import webapp2
 import urllib2#here we import all the classes and code needed to request info, receive that info and open info
-from xml.etree.ElementTree import QName #from xml.etree dir we setup communication
-#import xml.etree.ElementTree as ET #import library classes and syntax and setting naming of ET in application
-import json
+from xml.dom  import minidom
+
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
         p = SearchArea()
-        p.inputs = [['search','search','enter search term'],['Submit', 'submit',]]
+        p.inputs = [['search','text','please enter search term']]
         self.response.write(p.print_out())
 
-        #if input is entered and searched
-        #search = self.request.GET['search']
-            #setting url for api
-            #url = "http://news.yahoo.com/rss/?p=" +search
+        if self.request.GET:
+            search = self.request.GET['search']
+            url = "http://news.search.yahoo.com/rss?p="+ search
             #assembling request
-            #request = urllib2.Request(url)
+            request = urllib2.Request(url)
             #creating object with urllib2
-            #opener = urllib2.build_opener()
+            opener = urllib2.build_opener()
             #getting result from url- request from api
-            #result = opener.open(request)
-
-            #parsing with eTree
+            result = opener.open(request)
+            #parse the xml
+            xmldoc = minidom.parse(result)
+            self.content = ''
+            list = xmldoc.getElementsByTagName("title")
+            self.response.write(xmldoc.getElementsByTagName('title')[0].firstChild.nodeValue+"<br/>")
+            self.response.write(xmldoc.getElementsByTagName('title')[1].firstChild.nodeValue)
 
 
 
@@ -38,17 +40,16 @@ class Page(object):
     def __init__(self):#constructor function to call functions below
         #setting title of application
         self.title="News 4 U!"
-        self.css="css/self.css" #setting stylesheet directory
         self._head='''
 <!DOCTYPE HTML>
 <html>
     <head>
     <title>Get the news!</title>
-    <link href="{self.css}" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="css/main.css" >
     </head>
     <body>'''
         #body section where all content will go
-        self._body = ''
+        self._body = '<div id="box"></div>'
         #closing function to wrap end tag of html to print page to browser
         self._close = '''
     </body>
@@ -79,7 +80,7 @@ class SearchArea(Page):
         #seting up cycle through array inputs
         for item in arr:
             self._form_inputs += '<input type="'+item[1]+'"name="' +item[0]
-            #setting number of arrays depedning on what inputs i create at top of file
+            #setting number of arrays depending on what inputs i create at top of file
             try: #try this
                 self._form_inputs += '"placeholder="'+item[2]+'"/>'
             except:# otherwise
