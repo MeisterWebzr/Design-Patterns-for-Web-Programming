@@ -2,8 +2,8 @@
 html{
 	
 	background: url(bkg2.jpg) center no-repeat;
-	
-
+	background-color: black;
+	padding: 2px;
 
 }
 header{
@@ -31,7 +31,7 @@ input{
 	padding: 3px;
 	border: 1px solid black;
 	position: relative;
-	left: 0px;
+	left: 10px;
 	width: 490px;
 	height: 40px;
 	font-family: 'Helvetica';
