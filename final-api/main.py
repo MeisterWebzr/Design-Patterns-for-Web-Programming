@@ -31,6 +31,12 @@ class MainHandler(webapp2.RequestHandler):
             self.response.write(xmldoc.getElementsByTagName('title')[1].firstChild.nodeValue)
 
 
+class SearchView(object):
+    '''This data will be shown to the user based on the controller '''
+    def __init__(self):
+
+
+
 #this will serve as our abstract class with no instances
 class Page(object):
     def __init__(self):#constructor function to call functions below
