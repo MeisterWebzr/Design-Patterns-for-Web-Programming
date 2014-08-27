@@ -37,6 +37,14 @@ class SearchView(object):
 
 
 
+class SearchModel(object):
+    '''This model handles fetching, parsing and sorting from yahoo search api '''
+    def __init__(self):
+
+
+
+
+
 #this will serve as our abstract class with no instances
 class Page(object):
     def __init__(self):#constructor function to call functions below
