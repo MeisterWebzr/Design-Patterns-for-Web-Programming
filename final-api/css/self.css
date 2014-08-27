@@ -1,0 +1,14 @@
+
+html{
+	
+	background: red;
+
+}
+
+body{
+	border: 2px solid red;
+}
+
+body p{
+	color: red;
+}

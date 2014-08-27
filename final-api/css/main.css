@@ -1,0 +1,42 @@
+
+html{
+	
+	background: url(bkg2.jpg) center no-repeat;
+	background-color: black;
+	padding: 2px;
+
+}
+header{
+
+}
+
+body{
+	
+	width: 800px;
+	height: 500px;
+	margin: 0 auto;
+	margin-top: 100px;
+	padding-left: 330px;
+	padding-right: 100px;
+
+}
+
+form p{
+	color: red;
+
+}
+input{
+	margin: 0 auto;
+	margin-top: 200px;
+	padding: 3px;
+	border: 1px solid black;
+	position: relative;
+	left: 10px;
+	width: 490px;
+	height: 40px;
+	font-family: 'Helvetica';
+	font-size: 24px;
+	text-transform: uppercase;
+}
+
+
