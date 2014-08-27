@@ -15,32 +15,40 @@ class MainHandler(webapp2.RequestHandler):
         self.response.write(p.print_out())
 
         if self.request.GET:
-            search = self.request.GET['search']
-            url = "http://news.search.yahoo.com/rss?p="+ search
-            #assembling request
-            request = urllib2.Request(url)
-            #creating object with urllib2
-            opener = urllib2.build_opener()
-            #getting result from url- request from api
-            result = opener.open(request)
-            #parse the xml
-            xmldoc = minidom.parse(result)
+
+            '''
             self.content = ''
             list = xmldoc.getElementsByTagName("title")
             self.response.write(xmldoc.getElementsByTagName('title')[0].firstChild.nodeValue+"<br/>")
             self.response.write(xmldoc.getElementsByTagName('title')[1].firstChild.nodeValue)
+            '''
 
 
 class SearchView(object):
     '''This data will be shown to the user based on the controller '''
     def __init__(self):#contstructor class to init self
-        pass 
+        pass
 
 
 class SearchModel(object):
     '''This model handles fetching, parsing and sorting from yahoo search api '''
     def __init__(self):#contstructor class to init self
-        pass
+        self.__url = "http://news.search.yahoo.com/rss?p=" #setting url for api
+        self.__search = '' #setting string for search input
+        self.__xml = '' #linking xml string to model
+
+    #contacting the yahoo news api
+    def callApi(self):
+        #assembling request
+        request = urllib2.Request(self.__url+self.__search)
+        #creating object with urllib2
+        opener = urllib2.build_opener()
+        #getting result from url- request from api
+        result = opener.open(request)
+        #parse the xml
+        self.__xmldoc = minidom.parse(result)
+        print(result)
+
 
 class SearchData(object):
     ''' This data object will store the fetch info from model shown byt the view'''
@@ -48,9 +56,6 @@ class SearchData(object):
         self.title = '' #storing title from media item
         self.description = '' #storing description from media item
         self.link = '' #storing link from media item
-
-
-
 
 
 #this will serve as our abstract class with no instances
