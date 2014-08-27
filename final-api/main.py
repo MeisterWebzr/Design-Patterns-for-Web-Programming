@@ -42,6 +42,10 @@ class SearchModel(object):
     def __init__(self):
 
 
+class SearchData(object):
+    ''' This data object will store the fetch info from model shown byt the view'''
+    def __init__(self):
+
 
 
 
