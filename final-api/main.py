@@ -33,18 +33,18 @@ class MainHandler(webapp2.RequestHandler):
 
 class SearchView(object):
     '''This data will be shown to the user based on the controller '''
-    def __init__(self):
+    def __init__(self):#contstructor class to init self
 
 
 
 class SearchModel(object):
     '''This model handles fetching, parsing and sorting from yahoo search api '''
-    def __init__(self):
+    def __init__(self):#contstructor class to init self
 
 
 class SearchData(object):
     ''' This data object will store the fetch info from model shown byt the view'''
-    def __init__(self):
+    def __init__(self):#contstructor class to init self
 
 
 
