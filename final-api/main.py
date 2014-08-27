@@ -34,17 +34,21 @@ class MainHandler(webapp2.RequestHandler):
 class SearchView(object):
     '''This data will be shown to the user based on the controller '''
     def __init__(self):#contstructor class to init self
-
+        pass 
 
 
 class SearchModel(object):
     '''This model handles fetching, parsing and sorting from yahoo search api '''
     def __init__(self):#contstructor class to init self
-
+        pass
 
 class SearchData(object):
     ''' This data object will store the fetch info from model shown byt the view'''
     def __init__(self):#contstructor class to init self
+        self.title = '' #storing title from media item
+        self.description = '' #storing description from media item
+        self.link = '' #storing link from media item
+
 
 
 
@@ -106,7 +110,7 @@ class SearchArea(Page):
     #POLYMORPHISM!!!!!!!! ----------------- METHOD OVERRIDING
     def print_out(self):
         #returning the Page printout here using polymorphism to override
-        return  self._head + self._body + self._form_open + self._form_inputs + self._form_close + self._close
+        return  self._head + "Meister News powered by Yahoo!"+ self._form_open + self._form_inputs + self._form_close + self._body + self._close
 
 
 
