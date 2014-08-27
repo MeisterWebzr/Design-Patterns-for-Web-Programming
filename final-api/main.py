@@ -27,7 +27,30 @@ class MainHandler(webapp2.RequestHandler):
 class SearchView(object):
     '''This data will be shown to the user based on the controller '''
     def __init__(self):#contstructor class to init self
+        self._sdos = [] #setting search dos view from SearchModel
+        self.__content = '<br />' #break tag for visual line placement
+
+    def update(self):
+        for do in self.__sdos:
+            self.__content += " Title:  " + do.title + '<br/>'
+            self.__content += " Description:  " + do.description + '<br/>'
+            self.__content += " Link:  " + do.link
+
+    @property #read only getter
+    def content(self) #getting content setting to private content
+        return self.__content #returning content 
+
+
+    @property#write only
+    def sods(self):
         pass
+
+
+    @sdos.setter#write only
+    def sdos(self):
+        self.__sdos = arr
+        self.update()
+
 
 
 class SearchModel(object):
