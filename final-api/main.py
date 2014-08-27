@@ -45,9 +45,30 @@ class SearchModel(object):
         opener = urllib2.build_opener()
         #getting result from url- request from api
         result = opener.open(request)
-        #parse the xml
+        #parse the xml with minidom
         self.__xmldoc = minidom.parse(result)
-        print(result)
+
+        #sorting data from yahoo news api
+        list = self.__xmldoc.getElementByTagName("media:item") #gettting element by media item
+        self._dos = [] #setting variable for dos array
+        for item in list: #loop items in search list
+            do = SearchData() #setting do = to SearchData function
+            do.title = item.attributes['title'].value #setting do.title to item tag name 'title'
+            do.description = item.attributes['description'].value #setting do.description to item tag name 'description'
+            do.link = item.attributes['link'].value#setting do.link to item tag name 'link'
+            self._dos.append(do) #appending dos
+
+    @property #getter for returning dos data
+    def dos(self):#init dos to self
+        return self._dos #returning dos
+
+    @property
+    def search(self):
+        pass
+
+    @search.setter #setting search setter
+    def search(self, s): #declaring search init to self and s
+        self.__search = s #self search variable = s
 
 
 class SearchData(object):
