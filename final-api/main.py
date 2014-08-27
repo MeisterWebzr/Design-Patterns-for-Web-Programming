@@ -12,16 +12,23 @@ class MainHandler(webapp2.RequestHandler):
     def get(self):
         p = SearchArea()
         p.inputs = [['search','text','please enter search term']]
-        self.response.write(p.print_out())
 
         if self.request.GET:
+            sm = SearchModel()
+            sm.search = self.request.GET['search']
+            sm.callApi()
+            sv = SearchView()
+            sv.sdos = sm.dos
+            p._body = sv.content
 
-            '''
-            self.content = ''
-            list = xmldoc.getElementsByTagName("title")
-            self.response.write(xmldoc.getElementsByTagName('title')[0].firstChild.nodeValue+"<br/>")
-            self.response.write(xmldoc.getElementsByTagName('title')[1].firstChild.nodeValue)
-            '''
+        self.response.write(p.print_out())
+
+'''
+self.content = ''
+list = xmldoc.getElementsByTagName("title")
+self.response.write(xmldoc.getElementsByTagName('title')[0].firstChild.nodeValue+"<br/>")
+self.response.write(xmldoc.getElementsByTagName('title')[1].firstChild.nodeValue)
+'''
 
 
 class SearchView(object):
@@ -30,27 +37,26 @@ class SearchView(object):
         self._sdos = [] #setting search dos view from SearchModel
         self.__content = '<br />' #break tag for visual line placement
 
-    def update(self):
+    def update(self):#update for items in search list
         for do in self.__sdos:
-            self.__content += " Title:  " + do.title + '<br/>'
-            self.__content += " Description:  " + do.description + '<br/>'
-            self.__content += " Link:  " + do.link
+            self.__content += " Title:  " + do.title + '<br/>' #writing title
+            self.__content += " Description:  " + do.description + '<br/>'#writing description
+            self.__content += " Link:  " + do.link + '<br/>' #writing link
 
     @property #read only getter
-    def content(self) #getting content setting to private content
-        return self.__content #returning content 
+    def content(self):
+        return self.__content #returning content
 
 
-    @property#write only
-    def sods(self):
+    @property
+    def sdos(self):
         pass
 
 
-    @sdos.setter#write only
-    def sdos(self):
+    @sdos.setter
+    def sdos(self, arr):
         self.__sdos = arr
         self.update()
-
 
 
 class SearchModel(object):
@@ -72,7 +78,7 @@ class SearchModel(object):
         self.__xmldoc = minidom.parse(result)
 
         #sorting data from yahoo news api
-        list = self.__xmldoc.getElementByTagName("media:item") #gettting element by media item
+        list = self.__xmldoc.getElementsByTagName("media:item") #gettting element by media item
         self._dos = [] #setting variable for dos array
         for item in list: #loop items in search list
             do = SearchData() #setting do = to SearchData function
