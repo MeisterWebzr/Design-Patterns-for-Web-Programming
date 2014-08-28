@@ -29,7 +29,8 @@ input{
 	padding: 5px;
 	border: 1px solid cyan;
 	position: relative;
-	left: 0;
+	left: 3px;
+
 	width: 95%;
 	background-color: black;
 	height: 40px;
@@ -44,6 +45,21 @@ title{
 
 	text-decoration: none;
 	outline-color: red;
+}
+
+title:before{
+  display: block;
+  margin: 1em 0;
+  background: #000;
+  border-radius: 2px;
+}
+
+
+title:after{
+  display: block;
+  margin: 1em 0;
+  background: red;
+  border-radius: 2px;
 }
 
 
