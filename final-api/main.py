@@ -20,7 +20,6 @@ class MainHandler(webapp2.RequestHandler):
             sv = SearchView()
             sv.sdos = sm.dos
             p._body = sv.content
-
         self.response.write(p.print_out())
 
 '''
@@ -39,9 +38,12 @@ class SearchView(object):
 
     def update(self):#update for items in search list
         for do in self.__sdos:
-            self.__content += " Title:  " + do.title + '<br/>' #writing title
-            self.__content += " Description:  " + do.description + '<br/>'#writing description
-            self.__content += " Link:  " + do.link + '<br/>' #writing link
+            self.__content += "Your search results for: " + do.header + '<br/>' #writing title
+            self.__content += do.title + '<br/>' #writing title
+            self.__content += '<br/>' + do.description + '<br/>'#writing description
+            self.__content += '<br/>' + do.link + '<br/>' #writing link
+            self.__content += do.pub + '<br />'  #writing link
+            self.__content += "All rights reserved by " + do.copyright  #writing link
 
     @property #read only getter
     def content(self):
@@ -85,11 +87,15 @@ class SearchModel(object):
         #sorting data from yahoo news api
         self._dos = [] #setting variable for dos array
         do = SearchData() #setting do = to SearchData function
+        do.header = self.__xmldoc.getElementsByTagName('title')[0].firstChild.nodeValue #setting do title to item tag name 'title'
         do.title = self.__xmldoc.getElementsByTagName('title')[1].firstChild.nodeValue #setting do title to item tag name 'title'
-        do.description = self.__xmldoc.getElementsByTagName('description')[1].firstChild.nodeValue #setting do description to item tag name 'description'
-        do.link = self.__xmldoc.getElementsByTagName('link')[1].firstChild.nodeValue #setting do link to item tag name 'link'
+        do.description = self.__xmldoc.getElementsByTagName('description')[1].firstChild.nodeValue #getting description
+        do.link = self.__xmldoc.getElementsByTagName('link')[1].firstChild.nodeValue #getting link info
+        do.pub = self.__xmldoc.getElementsByTagName('pubDate')[0].firstChild.nodeValue #getting publish date first child value
+        do.copyright = self.__xmldoc.getElementsByTagName('copyright')[0].firstChild.nodeValue #getting copyright info first child value
+
         self._dos.append(do) #appending dos
-       
+
 
 
     @property #getter for returning dos data
@@ -106,17 +112,20 @@ class SearchModel(object):
         print "search word: "+ self.__search
 
 class SearchData(object):
-    ''' This data object will store the fetch info from model shown byt the view'''
+    ''' This data object will store the fetch info from model shown by the view'''
     def __init__(self):#contstructor class to init self
+        self.header = '' #storing title from media item
         self.title = '' #storing title from media item
         self.description = '' #storing description from media item
         self.link = '' #storing link from media item
+        self.pub = '' #storing link from media item
+        self.copyright = '' #storing link from media item
 
 #this will serve as our abstract class with no instances
 class Page(object):
     def __init__(self):#constructor function to call functions below
         #setting title of application
-        self.title="News 4 U!"
+        self.title="Get your lucky News!"
         self._head='''
 <!DOCTYPE HTML>
 <html>
@@ -130,6 +139,7 @@ class Page(object):
         #closing function to wrap end tag of html to print page to browser
         self._close = '''
     </body>
+
 </html>'''
 
 
@@ -145,6 +155,7 @@ class SearchArea(Page):
         self._form_close = '</form>' #form close
         self.__inputs = [] #setup inputs array index
         self._form_inputs= '' #setup form string inputs section
+
 
     @property #setting property of inputs that ill create above
     def inputs(self):
@@ -169,8 +180,7 @@ class SearchArea(Page):
     #POLYMORPHISM!!!!!!!! ----------------- METHOD OVERRIDING
     def print_out(self):
         #returning the Page printout here using polymorphism to override
-        return  self._head + "Meister News powered by Yahoo!"+ self._form_open + self._form_inputs + self._form_close + self._body + self._close
-
+        return  self._head + "Meister's Lucky News. Search and see.. powered by Yahoo!"+ self._form_open + self._form_inputs + self._form_close + self._body + self._close
 
 
 
