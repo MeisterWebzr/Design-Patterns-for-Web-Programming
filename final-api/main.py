@@ -24,7 +24,7 @@ class MainHandler(webapp2.RequestHandler):
         self.response.write(p.print_out())
 
 '''
-self.content = ''
+self.content = ''   #this code worked
 list = xmldoc.getElementsByTagName("title")
 self.response.write(xmldoc.getElementsByTagName('title')[0].firstChild.nodeValue+"<br/>")
 self.response.write(xmldoc.getElementsByTagName('title')[1].firstChild.nodeValue)
@@ -70,6 +70,9 @@ class SearchModel(object):
     def callApi(self):
         #assembling request
         request = urllib2.Request(self.__url+self.__search)
+        print "This is my URL: " + self.__url+self.__search
+
+
         #creating object with urllib2
         opener = urllib2.build_opener()
         #getting result from url- request from api
@@ -77,15 +80,17 @@ class SearchModel(object):
         #parse the xml with minidom
         self.__xmldoc = minidom.parse(result)
 
+        #print self.__xmldoc.getElementsByTagName('title')[0].firstChild.nodeValue
+
         #sorting data from yahoo news api
-        list = self.__xmldoc.getElementsByTagName("media:item") #gettting element by media item
         self._dos = [] #setting variable for dos array
-        for item in list: #loop items in search list
-            do = SearchData() #setting do = to SearchData function
-            do.title = item.attributes['title'].value #setting do.title to item tag name 'title'
-            do.description = item.attributes['description'].value #setting do.description to item tag name 'description'
-            do.link = item.attributes['link'].value#setting do.link to item tag name 'link'
-            self._dos.append(do) #appending dos
+        do = SearchData() #setting do = to SearchData function
+        do.title = self.__xmldoc.getElementsByTagName('title')[1].firstChild.nodeValue #setting do title to item tag name 'title'
+        do.description = self.__xmldoc.getElementsByTagName('description')[1].firstChild.nodeValue #setting do description to item tag name 'description'
+        do.link = self.__xmldoc.getElementsByTagName('link')[1].firstChild.nodeValue #setting do link to item tag name 'link'
+        self._dos.append(do) #appending dos
+       
+
 
     @property #getter for returning dos data
     def dos(self):#init dos to self
@@ -98,7 +103,7 @@ class SearchModel(object):
     @search.setter #setting search setter
     def search(self, s): #declaring search init to self and s
         self.__search = s #self search variable = s
-
+        print "search word: "+ self.__search
 
 class SearchData(object):
     ''' This data object will store the fetch info from model shown byt the view'''
@@ -106,7 +111,6 @@ class SearchData(object):
         self.title = '' #storing title from media item
         self.description = '' #storing description from media item
         self.link = '' #storing link from media item
-
 
 #this will serve as our abstract class with no instances
 class Page(object):
