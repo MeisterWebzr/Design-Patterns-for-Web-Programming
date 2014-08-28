@@ -1,7 +1,7 @@
 '''
 Student: Otto Burroughs
-Date: 8-21-2014
-Assignment: GEA Launcher
+Date: 8-28-2014
+Assignment: Final Api Yahoo News Project
 '''
 import webapp2
 import urllib2#here we import all the classes and code needed to request info, receive that info and open info
@@ -13,13 +13,14 @@ class MainHandler(webapp2.RequestHandler):
         p = SearchArea()
         p.inputs = [['search','text','please enter search term']]
 
-        if self.request.GET:
-            sm = SearchModel()
-            sm.search = self.request.GET['search']
-            sm.callApi()
-            sv = SearchView()
-            sv.sdos = sm.dos
-            p._body = sv.content
+
+        if self.request.GET: #if input entered run funtions below
+            sm = SearchModel() #search model function
+            sm.search = self.request.GET['search'] #setting search model function
+            sm.callApi()#calling api functin that parses sorts and send data to model
+            sv = SearchView()#getting all info from model to show to user with view
+            sv.sdos = sm.dos#sorting through array of information
+            p._body = sv.content #setting body = view content
         self.response.write(p.print_out())
 
 '''
@@ -50,12 +51,12 @@ class SearchView(object):
         return self.__content #returning content
 
 
-    @property
+    @property#dos prorpety set for passing input
     def sdos(self):
         pass
 
 
-    @sdos.setter
+    @sdos.setter #setter fr input array and update
     def sdos(self, arr):
         self.__sdos = arr
         self.update()
